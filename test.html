@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>FLEMOS portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Consultor de diseño con mas de 15 años de experiencia en diseño de interfaces web y aplicaciones" />
+		<meta name="keywords" content="Design consultant, design interfaces, user experience, user interfaces, humanize technology, experiencia de usuario, diseño de interfaces, web, mobile, aplicaciones, diseño centrado en el usuario" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168720884-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-168720884-1');
+		</script>
+		<style>
+			body {
+				overflow: hidden;
+			}
+	
+			.preloader {
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				background: white;
+				z-index: 99999999;
+			}
+	
+			#preloader-logo {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+			}
+	
+			.loading-msg {
+				width: 100%;
+				font-size: 0.75em;
+				color: #555;
+				position: absolute;
+				bottom: 10%;
+				left: 50%;
+				transform: translate(-50%, 50%);
+				text-align: center;
+			}
+	
+			.spinner {
+				width: 80px;
+				height: 80px;
+				border: 2px solid #f3f3f3;
+				border-top: 3px solid #2489CE;
+				border-radius: 100%;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				animation: spin 1s infinite ease;
+			}
+	
+			@keyframes spin {
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(360deg);
+				}
+			}
+	
+			#loading-msg {
+				width: 100%;
+				position: absolute;
+				left: 0;
+				bottom: 25px;
+				text-align: center;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				color: #333;
+				font-size: 0.8em;
+			}
+	
+			body {
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="preloader">
+			<div class="spinner"></div>
+			<span id="loading-msg"></span>
+		</div>
+		<script>
+			(function() {
+				var loaderText = document.getElementById("loading-msg");
+				var refreshIntervalId = setInterval(function() {
+					loaderText.innerHTML = getLoadingText();
+				}, 2500);
+	
+				function getLoadingText() {
+					var strLoadingText;
+					var arrLoadingText = ["Adjusting Bell Curves", "Aesthesizing Industrial Areas"
+					];
+					var rand = Math.floor(Math.random() * arrLoadingText.length);
+					return arrLoadingText[rand];
+				}
+			})();
+
+			// When document has been loaded, then allow body to scroll and hide preloader class.
+				$(function(e){
+					$(".preloader").hide();
+					$("body").css("overflow", "scroll");
+				});
+		</script>
+
+	</body>
+</html>
